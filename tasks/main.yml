@@ -32,7 +32,7 @@
 
 - name: Remove Old Version
   file: state=absent path="{{ prefix_dir }}{{ docker_compose_bin }}/docker-compose"
-  when: ver|failed
+  when: ver is failed
 
 - name: Set install url as fact unless testing
   set_fact:
